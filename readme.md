@@ -15,3 +15,7 @@ On mac :
 # Imaginairy normal map
 
 https://github.com/brycedrennan/imaginairy-normal-map  
+
+# Blender
+
+    Run blender.sh
