@@ -1,22 +1,26 @@
 # TODO
 
 Check these tools.  
-How easy it is to do batch exports ?  
-Create batch export tools for most promising solutions.  
+- How easy it is to do batch exports ?  
+- Create batch export tools for most promising solutions.  
+- Move tested tools to the done section and add a small comment
 
-## Windows
--	Laigter : https://azagaya.itch.io/laigter
+(Not an exhaustive list, feel free to complete it)
+
+## GUI tools
+### Windows only
 -	xNormal
 -	ShaderMap
 -	Materialize
+### All platforms
+-	Laigter : https://azagaya.itch.io/laigter
+- 	Photoshop 3d filter
+-	Blender 
+-	Sprite Lamp
 ## IA
 -	Stable Diffusion
 -	ControlNet : https://huggingface.co/lllyasviel/sd-controlnet-normal
-## Other
-- 	Photoshop 3d filter
--	Blender 
 -	Blender DeepBump : https://github.com/HugoTini/DeepBump
--	Sprite Lamp
 
 <br><br>
 
