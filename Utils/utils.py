@@ -1,4 +1,6 @@
 import os
+from IPython.display import display
+from PIL import Image
 
 def list_images():
     images = []
@@ -7,3 +9,7 @@ def list_images():
             if file.endswith(".png"):
                 images.append(os.path.join(root, file))
     return images
+
+def show(img):
+    pilImage = Image.fromarray(img)
+    display(pilImage)
