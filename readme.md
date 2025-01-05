@@ -54,3 +54,11 @@ Run this script to generate normalmap by deepbump
 ``` 
 python3 dev-version/deepbump/batch_generate.py Inputs Outputs/DeepbumpNormalMap color_to_normals --color_to_normals-overlap SMALL --verbose
 ```
+
+## NormalMap Online
+Occlusion Map Generator
+```js
+cd dev-version/normalmap-online
+npm install
+node javascripts/main.js //the input and output paths are set at main.js file
+```
