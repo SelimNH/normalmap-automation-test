@@ -90,7 +90,7 @@ for root, dirs, files in os.walk(args.input_folder):
         output_subdir = os.path.join(args.output_folder, rel_dir)
         os.makedirs(output_subdir, exist_ok=True)
 
-        output_filename = os.path.splitext(filename)[0] + "_normals.png"
+        output_filename = os.path.splitext(filename)[0] + "-nmo.png"
         output_path = os.path.join(output_subdir, output_filename)
 
         if args.verbose:

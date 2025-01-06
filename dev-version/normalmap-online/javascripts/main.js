@@ -64,7 +64,7 @@ async function runForAllImages() {
     const relativePath = path.relative(inputDir, inputPath);
     const baseName = path.parse(relativePath).name;
     const outputSubDir = path.dirname(relativePath);
-    const outputPath = path.join(outputDir, outputSubDir, `${baseName}_ao.png`);
+    const outputPath = path.join(outputDir, outputSubDir, `${baseName}-nmo.png`);
 
     try {
       await processImage(inputPath, outputPath);
