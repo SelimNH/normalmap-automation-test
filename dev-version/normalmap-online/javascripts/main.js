@@ -50,7 +50,7 @@ async function runForAllImages() {
   const inputDir = path.join(__dirname, "..", "..", "..", "Inputs");
 
   // const outputDir = path.join(__dirname, "..", "outputs");
-  const outputDir = path.join(__dirname, "..", "..", "..", "Outputs", "NormalMaps");
+  const outputDir = path.join(__dirname, "..", "..", "..", "Outputs", "OcclusionMaps");
 
   const imagePaths = readImagesRecursively(inputDir);
   for (const inputPath of imagePaths) {
