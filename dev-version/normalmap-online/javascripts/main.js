@@ -50,21 +50,14 @@ async function runForAllImages() {
   const inputDir = path.join(__dirname, "..", "..", "..", "Inputs");
 
   // const outputDir = path.join(__dirname, "..", "outputs");
-  const outputDir = path.join(
-    __dirname,
-    "..",
-    "..",
-    "..",
-    "Outputs",
-    "OcclusionMap-NormalMap-Online"
-  );
+  const outputDir = path.join(__dirname, "..", "..", "..", "Outputs", "OcclusionMaps");
 
   const imagePaths = readImagesRecursively(inputDir);
   for (const inputPath of imagePaths) {
     const relativePath = path.relative(inputDir, inputPath);
     const baseName = path.parse(relativePath).name;
     const outputSubDir = path.dirname(relativePath);
-    const outputPath = path.join(outputDir, outputSubDir, `${baseName}-nmo.png`);
+    const outputPath = path.join(outputDir, outputSubDir, `${baseName}/${baseName}-nmo.png`);
 
     try {
       await processImage(inputPath, outputPath);

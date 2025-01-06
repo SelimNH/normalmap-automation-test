@@ -76,28 +76,38 @@ for root, dirs, files in os.walk(args.input_folder):
     for filename in files:
         input_path = os.path.join(root, filename)
 
-        # Check if the file is an image (e.g., based on file extension)
+        # Skip any non-image files
         if not filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff')):
             if args.verbose:
                 print(f"Skipping non-image file: {input_path}")
             continue
 
-        # Compute the relative path from the input folder
+        # Determine the relative subfolder path (e.g., "grass" if root is "Inputs/grass")
         rel_dir = os.path.relpath(root, args.input_folder)
-        rel_file = os.path.join(rel_dir, filename)
 
-        # Construct the output path
+        # Create a matching subfolder under the main output folder (e.g., "Outputs/NormalMaps/grass")
         output_subdir = os.path.join(args.output_folder, rel_dir)
         os.makedirs(output_subdir, exist_ok=True)
 
-        output_filename = os.path.splitext(filename)[0] + "-nmo.png"
-        output_path = os.path.join(output_subdir, output_filename)
+        # Extract the base filename (e.g., "image" from "image.png")
+        base_name = os.path.splitext(filename)[0]
+
+        # Make another subfolder named after the base filename (e.g., "Outputs/NormalMaps/grass/image")
+        base_folder = os.path.join(output_subdir, base_name)
+        os.makedirs(base_folder, exist_ok=True)
+
+        # Define the output filename with "-dp" suffix (e.g., "image-dp.png")
+        output_filename = f"{base_name}-dp.png"
+
+        # Complete output path (e.g., "Outputs/NormalMaps/grass/image/image-dp.png")
+        output_path = os.path.join(base_folder, output_filename)
 
         if args.verbose:
             print(f"Processing {input_path} -> {output_path}")
 
-        # Process the image
+        # Process the image and save
         process_image(input_path, output_path, args.module, args)
+
 
 
 
