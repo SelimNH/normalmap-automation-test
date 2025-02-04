@@ -9,7 +9,3 @@ def list_images():
             if file.endswith(".png"):
                 images.append(os.path.join(root, file))
     return images
-
-def show(img):
-    pilImage = Image.fromarray(img)
-    display(pilImage)
